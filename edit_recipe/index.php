@@ -1,0 +1,14 @@
+<?php
+    include_once "model.php";
+	session_start();
+    if(array_key_exists('status', $_SESSION) && $_SESSION['status'] == "loged in"){
+        $recipe = get_recipe();
+        include_once "view.php";
+        if($_SERVER['REQUEST_METHOD'] == "POST"){
+            save_recipe();
+        }
+    }
+	else{
+        header("location: /login/?l=add_recipe");
+    }
+?>
