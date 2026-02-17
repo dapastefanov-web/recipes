@@ -9,18 +9,18 @@
         <h1>Edit recipe</h1>
         <form method = "post">
             <label>title:</label><br>
-            <input type = "text" name = "title" value = "<?php echo $recipe[0]; ?>"><br><br>
+            <input type = "text" name = "title" value = "<?php echo $recipe[0]; ?>" oninput="this.size = this.value.length"><br><br>
             <div id = "ingredient">
                 <label>ingredients:</label><br>
                 <?php foreach (explode("<>", $recipe[1]) as $index => $ingredient) {?>
-                <input type = "text" name = "ingredient_<?php echo $index ?>" value = "<?php echo $ingredient; ?>"><br><br>
+                <input type = "text" name = "ingredient_<?php echo $index ?>" value = "<?php echo $ingredient; ?>" oninput="this.size = this.value.length"><br><br>
                 <?php } ?>
             </div>
             <button type="button" onclick = add_ingredient()>add ingredient</button><br><br>
             <div id = "preperation">
                 <label>preperation:</label><br>
                 <?php foreach (explode("<>", $recipe[2]) as $index => $step) {?>
-                <input type = "text" name = "step_<?php echo $index ?>" value = "<?php echo $step; ?>"><br><br>
+                <input type = "text" name = "step_<?php echo $index ?>" value = "<?php echo $step; ?>" oninput="this.size = this.value.length"><br><br>
                 <?php } ?>
             </div>
             <button type="button" onclick = add_prep_step()>add preparation step</button><br><br>

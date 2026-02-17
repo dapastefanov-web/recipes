@@ -1,12 +1,15 @@
 <?php    
     include_once "../model.php";
 	session_start();
+    //open page if user is loged in
     if(array_key_exists('status', $_SESSION) && $_SESSION['status'] == "loged in"){
         include "view.html";
         if($_SERVER['REQUEST_METHOD'] == "POST"){
+            //prepare and put submited recipe into the recipe data file
             $recipe = prepare_recipe();
             file_put_contents("../data/recipes_table.csv", $recipe, FILE_APPEND);
-            header("location: /../recipe/?id=" . $_GET['id']);
+            //go to page with all recipes
+            header("location: /../recipes/");
         }
     }
 	else{
