@@ -6,6 +6,7 @@
         if($_SERVER['REQUEST_METHOD'] == "POST"){
             $recipe = prepare_recipe();
             file_put_contents("../data/recipes_table.csv", $recipe, FILE_APPEND);
+            header("location: /../recipe/?id=" . $_GET['id']);
         }
     }
 	else{

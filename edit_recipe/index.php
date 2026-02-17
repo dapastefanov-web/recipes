@@ -6,6 +6,7 @@
         include_once "view.php";
         if($_SERVER['REQUEST_METHOD'] == "POST"){
             save_recipe();
+            header("location: /../recipe/?id=" . $_GET['id']);
         }
     }
 	else{
