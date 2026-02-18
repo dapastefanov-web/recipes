@@ -27,6 +27,6 @@
             <input type = "submit" value = "submit">
         </form>
         <a href = "/recipes/">recipes</a>
-        <script src = 'view.js'></script>
+        <script src = '../sources/recipe.js'></script>
     </body>
 </html>
