@@ -1,5 +1,5 @@
 <?php
-    include "../model.php";
+    include_once "../sources/model.php";
     function save_recipe(){
         $recipe = prepare_recipe();
         $recipes = file("../data/recipes_table.csv");

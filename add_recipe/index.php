@@ -1,9 +1,9 @@
 <?php    
-    include_once "../model.php";
+    include_once "../sources/model.php";
 	session_start();
     //open page if user is loged in
     if(array_key_exists('status', $_SESSION) && $_SESSION['status'] == "loged in"){
-        include "view.html";
+        include_once "view.html";
         if($_SERVER['REQUEST_METHOD'] == "POST"){
             //prepare and put submited recipe into the recipe data file
             $recipe = prepare_recipe();
