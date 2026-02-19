@@ -27,3 +27,14 @@ function add_prep_step(){
 function delete_container(element){
     element.parentElement.remove();
 }
+function change_favorite(){
+    favorite_checkbox = document.getElementById("favorite");
+    favorite_recipe = document.getElementById("favorite").value.split(",");
+    console.log("raboti 1");
+    if (favorite_checkbox.checked){
+        localStorage.setItem("favorite_recipe|" + favorite_recipe[0], favorite_recipe);
+    }
+    if (!favorite_checkbox.checked){
+        localStorage.removeItem("favorite_recipe|" + favorite_recipe[0]);
+    }
+}
