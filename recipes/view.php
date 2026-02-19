@@ -14,6 +14,7 @@
                 </a></li>
             <?php } ?>
         </ul>
+        <a href = "/favorites/">favorites</a>
 		<a href = "/add_recipe/"><h2>add</h2></a>
         <?php 
             session_start();

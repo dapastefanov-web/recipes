@@ -6,7 +6,8 @@
         <title>recipe</title>
     </head>
     <body>
-        <input type = "checkbox" id = "favorite" value = "<?php echo $_GET['id'].",". $recipe[0] ?>" onclick = "change_favorite()">
+        <input type = "checkbox" id = "favorite"
+        onclick = "favorite.change(this, <?php echo $_GET['id'] .',\''. $recipe[0] .'\''?>)">
         <h1><?php echo $recipe[0]; ?></h1>
 		<h2>ingredients:</h2>
         <ul>
@@ -28,9 +29,8 @@
         <a href = "/recipes/">recipes</a>
         <script src = "../sources/recipe.js"></script>
         <script>
-            if ("favorite_recipe|" + document.getElementById("favorite").value.split(",")[0] in localStorage){
-                    document.getElementById("favorite").checked = true;
-            }
+            favorite.init();
+            favorite.is_set(<?php echo $_GET['id'] ?>);
         </script>
 	</body>
 </html>
