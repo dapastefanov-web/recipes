@@ -16,11 +16,5 @@
         </ul>
         <a href = "/favorites/">favorites</a>
 		<a href = "/add_recipe/"><h2>add</h2></a>
-        <?php 
-            session_start();
-            if(array_key_exists('status', $_SESSION) && $_SESSION['status'] == "loged in"){
-                echo "<a href = '/login/'>Log out</a>";
-            }
-        ?>
 	</body>
 </html>
