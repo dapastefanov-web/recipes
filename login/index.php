@@ -1,4 +1,5 @@
 <?php
+    include_once "view.html";
 	session_start();
 	session_unset();
 	if($_SERVER['REQUEST_METHOD'] == "POST"){
@@ -11,15 +12,18 @@
             }
         }
         if($is_existing){
-            $location = "/" . $_GET['l'] . "/";
-            $_SESSION['status'] = "loged in";
-            header("location: $location");
-        }else{
-            include 'view.html';
+            if (array_key_exists('l', $_GET)){
+                $location = "/" . $_GET['l'] . "/?id=" . $_GET['id'];
+                $_SESSION['status'] = "loged in";
+                header("location: $location");
+            }
+            else {
+                header("location: /../");
+            }
+        }
+        else{
             echo '<script>window.alert("This email/password is wrong.")</script>';
         }
         fclose($users);
-    }else{
-        include 'view.html';
     }
 ?>

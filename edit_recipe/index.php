@@ -10,6 +10,6 @@
         }
     }
 	else{
-        header("location: /login/?l=add_recipe");
+        header("location: /login/?l=edit_recipe&id=" . $_GET['id']);
     }
 ?>
