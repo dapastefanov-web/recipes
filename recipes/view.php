@@ -9,9 +9,9 @@
     <body>
         <div class="container1">
             <header>
-            <h1>Recipes</h1>
+            <a href = "/recipes/"><h1>Recipes</h1></a>
                                 <nav>
-                    <a href="*">COMPANY</a>
+                    <a href = "/recipes/">RECIPES</a>
                     <a href="*">SERVICES</a>
                     <a href="*">TEAM</a>
                     <a href="*">CONTACTS</a>

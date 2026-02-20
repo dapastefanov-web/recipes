@@ -158,6 +158,11 @@ header h1{
   font-weight: 300;
 }
 
+header a{
+  text-decoration: none;
+  color: black;
+}
+
 nav{
   display: flex;
   align-items: center;
