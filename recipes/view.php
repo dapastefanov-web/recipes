@@ -12,6 +12,7 @@
             <a href = "/recipes/"><h1>Recipes</h1></a>
                                 <nav>
                     <a href = "/recipes/">RECIPES</a>
+                    <a href = "/history/">HISTORY</a>
                     <a href="*">SERVICES</a>
                     <a href="*">TEAM</a>
                     <a href="*">CONTACTS</a>

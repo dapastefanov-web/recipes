@@ -31,6 +31,8 @@
         <script>
             favorite.init();
             favorite.is_set(<?php echo $_GET['id'] ?>);
+            view_history.init();
+            view_history.add(<?php echo $_GET['id'] .',\''. $recipe[0] .'\''?>);
         </script>
 	</body>
 </html>

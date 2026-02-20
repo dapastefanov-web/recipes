@@ -46,7 +46,8 @@ var favorite = {
             }
         });
     },
-    save : function (){ localStorage.favorite_recipes = JSON.stringify(this.recipes);       
+    save : function (){
+        localStorage.favorite_recipes = JSON.stringify(this.recipes);       
     },
     change : function (checkbox, id, name){
         if (checkbox.checked){   
@@ -77,6 +78,37 @@ var favorite = {
                 ${element.name}
             <a></li>`
             document.getElementById("favorites").insertAdjacentHTML("beforeend", recipe);
+        })
+    }
+};
+
+var view_history = {
+    recipes : [],
+    init : function(){
+        if (localStorage.history){
+            this.recipes = JSON.parse(localStorage.history);
+        }
+    },
+    save : function (){
+        localStorage.history = JSON.stringify(this.recipes);       
+    },
+    add : function (id, name){ 
+        this.recipes.push({
+            "id": id,
+            "name": name
+        });
+        if (this.recipes.length > 20){
+            this.recipes.shift();
+        }
+        this.save();
+    },
+    list : function(){
+        this.recipes.toReversed().forEach(function(element){
+            let recipe = 
+            `<li><a href = /recipe/?id=${element.id}>
+                ${element.name}
+            <a></li>`
+            document.getElementById("history").insertAdjacentHTML("beforeend", recipe);
         })
     }
 }
