@@ -103,9 +103,12 @@ var view_history = {
         this.save();
     },
     list : function(){
-        this.recipes.toReversed().forEach(function(element){
+        this.recipes.toReversed().forEach(function(element, index){
+            if (index === 5){
+                return 0;
+            }
             let recipe = 
-            `<li><a href = /recipe/?id=${element.id}>
+            `<li style><a href = /recipe/?id=${element.id}>
                 ${element.name}
             <a></li>`
             document.getElementById("history").insertAdjacentHTML("beforeend", recipe);

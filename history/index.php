@@ -1,6 +1,6 @@
-<?php include_once "head.html"; ?>
-    <h2>History</h2>
-    <ul id = "history" class = "recipe-card">
+<?php include_once "../head.html"; ?>
+    <h1>History</h1>
+    <ul id = "history">
     </ul>
     <script src = "/sources/recipe.js">
     </script>
