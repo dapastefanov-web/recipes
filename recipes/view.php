@@ -1,23 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>recipes</title>
-        <link rel="stylesheet" href="/sources/style.css">
-    </head>
-    <body>
-        <div class="container1">
-            <header>
-            <h1>Recipes</h1>
-                                <nav>
-                    <a href="*">COMPANY</a>
-                    <a href="*">SERVICES</a>
-                    <a href="*">TEAM</a>
-                    <a href="*">CONTACTS</a>
-                </nav>
-                    <button class="btn-signin1">Sign In</button>
-            </header>   
+<?php include_once "../head.html"; ?>
             <main>
                 <div class="content">
                 <?php foreach ($recipe_titles as $index => $recipe) { ?>

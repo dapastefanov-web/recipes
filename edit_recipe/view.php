@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>edit recipe</title>
-    </head>
-    <body>
+<?php include_once "../head.html"; ?>
         <h1>Edit recipe</h1>
         <form method = "post">
             <label>title:</label><br>
@@ -26,7 +19,6 @@
             <button type="button" onclick = add_prep_step()>add preparation step</button><br><br>
             <input type = "submit" value = "submit">
         </form>
-        <a href = "/recipes/">recipes</a>
         <script src = '../sources/recipe.js'></script>
     </body>
 </html>
