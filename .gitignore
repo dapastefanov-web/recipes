@@ -1,5 +1,5 @@
 docker-compose.yml
 Dockerfile
 add_recipe/test
-ftp.sh
 ftpup
+ftp.sh

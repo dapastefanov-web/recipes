@@ -1,5 +1,5 @@
 <?php
-    include_once "view.html";
+    include_once "view.php";
 	session_start();
 	session_unset();
 	if($_SERVER['REQUEST_METHOD'] == "POST"){

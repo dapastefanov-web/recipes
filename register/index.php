@@ -1,5 +1,5 @@
 <?php
-    include 'view.html';
+    include_once 'view.php';
 	if($_SERVER['REQUEST_METHOD'] == "POST"){
         $users = fopen("../data/users.csv", "a+");
         $is_existing = false;
