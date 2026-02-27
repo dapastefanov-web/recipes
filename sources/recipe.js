@@ -115,3 +115,33 @@ var view_history = {
         })
     }
 }
+var rating = {
+    rated : [],
+    init : function(){
+        if (localStorage.rated){
+            this.rated = JSON.parse(localStorage.rated);
+        }
+    },
+    is_set : function (id){
+        this.rated.forEach(function(element){
+            if (element === id){
+                document.getElementById("rating").remove();
+            }
+        });
+    },
+    save : function (){
+        localStorage.rated = JSON.stringify(this.rated);       
+    },
+    add : function(id){
+        this.rated.push(id);
+        this.save();
+    },
+    rate : function(input){
+        for (i = 5; i > 0; i--){
+            document.getElementById(i + "_star").checked = false
+        }
+        for (input; input > 0; input--){
+            document.getElementById(input + "_star").checked = true
+        }
+    },
+}
