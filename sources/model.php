@@ -25,13 +25,14 @@
         }
         return $recipe . "\n";
     }
-    function get_recipe(){
+    function get_recipe($id){
         $f_recipes = fopen("../data/recipes_table.csv", "r");
         $recipe = [];
-        $recipe_id = $_GET['id'];
+        $recipe_id = $id;
         for($recipe_id; $recipe_id >= 0; $recipe_id--){
             $recipe = fgets($f_recipes);
         }
+        $recipe = rtrim($recipe, "\n");
         $recipe = explode("</>", $recipe);
         fclose($f_recipes);
         return $recipe;

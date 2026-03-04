@@ -116,27 +116,52 @@ var view_history = {
     }
 }
 var rating = {
-    rated : [],
+    value : 0,
+    history : [],
     init : function(){
         if (localStorage.rated){
-            this.rated = JSON.parse(localStorage.rated);
+            this.history = JSON.parse(localStorage.rated);
         }
     },
     is_set : function (id){
-        this.rated.forEach(function(element){
+        this.history.forEach(function(element){
             if (element === id){
                 document.getElementById("rating").remove();
             }
         });
     },
     save : function (){
-        localStorage.rated = JSON.stringify(this.rated);       
+        localStorage.rated = JSON.stringify(this.history);       
     },
-    add : function(id){
-        this.rated.push(id);
+    add : async function(id, old_rating_str){
+        this.history.push(id);
         this.save();
+        document.getElementById("rate").remove();
+        let new_rating;
+        if (old_rating_str.includes("<>")){
+            let old_rating = old_rating_str.split("<>")
+            old_rating.forEach(function(element, index){
+                old_rating[index] = parseInt(element);
+            });
+            new_rating = ((old_rating[0] * old_rating[1]) + this.value) / (old_rating[1] + 1);
+        }
+        else {
+            new_rating = this.value;
+        }
+        let request = {
+            "id": id,
+            "value": this.value
+        };
+        const response = await fetch("/rating/", {
+            method: "POST",
+            body: JSON.stringify(request)
+        });
+        if (response.ok) {
+            document.getElementById("rating").innerHTML = "rating: " + new_rating;
+        }
     },
     rate : function(input){
+        this.value = input;
         for (i = 5; i > 0; i--){
             document.getElementById(i + "_star").checked = false
         }
