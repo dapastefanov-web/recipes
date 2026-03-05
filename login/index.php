@@ -13,7 +13,10 @@
         }
         if($is_existing){
             if (array_key_exists('l', $_GET)){
-                $location = "/" . $_GET['l'] . "/?id=" . $_GET['id'];
+                $location = "/" . $_GET['l'];
+                if (array_key_exists('id', $_GET)){
+                    $location .= "/?id=" . $_GET['id'];
+                }
                 $_SESSION['status'] = "loged in";
                 header("location: $location");
             }

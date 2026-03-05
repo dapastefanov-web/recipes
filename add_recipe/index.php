@@ -3,7 +3,7 @@
 	session_start();
     //open page if user is loged in
     if(array_key_exists('status', $_SESSION) && $_SESSION['status'] == "loged in"){
-        include_once "view.html";
+        include_once "view.php";
         if($_SERVER['REQUEST_METHOD'] == "POST"){
             //prepare and put submited recipe into the recipe data file
             $recipe = prepare_recipe(true);
