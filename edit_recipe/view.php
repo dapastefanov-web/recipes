@@ -1,6 +1,6 @@
 <?php include_once "../head.html"; ?>
         <h1>Edit recipe</h1>
-        <form method = "post">
+        <form method = "post" enctype="multipart/form-data">
             <label>title:</label><br>
             <input type = "text" name = "title" value = "<?php echo $recipe[0]; ?>" oninput="this.size = this.value.length"><br><br>
             <div id = "ingredient">
@@ -17,6 +17,7 @@
                 <?php } ?>
             </div>
             <button type="button" onclick = add_prep_step()>add preparation step</button><br><br>
+            <input type = "file" name = "image" ><br><br>
             <input type = "submit" value = "submit">
         </form>
         <script src = '../sources/recipe.js'></script>

@@ -7,6 +7,7 @@
         <h1><?php echo $recipe[0]; ?></h1>
         <h3 id = "rating" >rating: <?php echo explode("<>", $recipe[3])[0]; ?> </h3>
         <div>
+            <img src = "/sources/cosmetics/<?php echo $_GET['id']; ?>.png" alt = "<?php echo $recipe[0]; ?>" width = "20%">
 
             <h2>ingredients:</h2>
             <ul>

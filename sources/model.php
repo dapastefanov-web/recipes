@@ -38,9 +38,8 @@
         return $recipe;
     }
     function save_recipe(){
-        $recipe = prepare_recipe(false);
-        $recipe = rtrim($recipe, "\n") . explode("</>", $recipes[$_GET['id']])[3] . "\n";
         $recipes = file("../data/recipes_table.csv");
+        $recipe = trim(prepare_recipe(false), "\n") . "</>" . explode("</>",$recipes[$_GET['id']])[3];
         $recipes[$_GET['id']] = $recipe;
         file_put_contents("../data/recipes_table.csv", implode("", $recipes));
     }

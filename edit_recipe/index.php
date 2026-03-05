@@ -6,6 +6,8 @@
         include_once "view.php";
         if($_SERVER['REQUEST_METHOD'] == "POST"){
             save_recipe();
+            file_put_contents("../sources/cosmetics/" . $_GET['id'] . ".png", "");
+            move_uploaded_file($_FILES['image']['tmp_name'], "../sources/cosmetics/" . $_GET['id'] . ".png");
             header("location: /../recipe/?id=" . $_GET['id']);
         }
     }
